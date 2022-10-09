@@ -24,7 +24,7 @@ Installation
 
 Prerequisites
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-* python3 python2
+* python3.6 python2
 * make
 * ripgrep
 
@@ -47,10 +47,9 @@ The souce structure is as follow:
    ├── cpip  //preprocessor for this task
    ├── issue.txt 
    ├── kvce.py  //main logic
-   ├── README.md
    ├── requirements.txt //python libraries
    ├── scripts //some utilities scripts
-   ├── utils //util function
+   ├── utils //util module
 
 .. toctree::
    :maxdepth: 2
