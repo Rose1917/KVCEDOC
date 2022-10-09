@@ -22,12 +22,23 @@ Features
 Installation
 ==================================
 
+Prerequisites
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* python3 python2
+* make
+* ripgrep
+
+Prerequisites
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Directly clone the source from github.
 
 .. code-block:: console
 
    $git clone https://github.com/Rose1917/KVCE2
 
+File Structure
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The souce structure is as follow:
 
 .. code-block:: console
