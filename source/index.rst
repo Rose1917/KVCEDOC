@@ -28,7 +28,7 @@ Prerequisites
 * make
 * ripgrep
 
-Prerequisites
+Download
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Directly clone the source from github.
