@@ -17,6 +17,7 @@
     <script src="_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="Installation.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -35,49 +36,46 @@
             
   <section id="kvce-introduction">
 <h1>KVCE Introduction<a class="headerlink" href="#kvce-introduction" title="Permalink to this heading">¶</a></h1>
-<p><strong>KVCE</strong> is a linux kernel configuration variable analysis tool which provides the function of kernel configuration extraction and finding the configuration-related code or file.</p>
+<p><strong>KVCE</strong> is a linux kernel (Kbuild) configuration analysis tool which mainly provides the relationship between the kernel configuration and linux source code or file.</p>
 <p>This project is written in pure python(although it also utilizes some existing advanced binary tools). it is powered by <a class="reference external" href="https://github.com/BurntSushi/ripgrep">ripgrep</a>, <a class="reference external" href="https://github.com/ulfalizer/Kconfiglib">kconfiglib</a>, <a class="reference external" href="https://cpip.readthedocs.io/en/latest/readme.html">cpip</a>.</p>
 </section>
 <section id="features">
 <h1>Features<a class="headerlink" href="#features" title="Permalink to this heading">¶</a></h1>
 <ul class="simple">
-<li><p>Fast: KVCE has a built-in C/C++preprocessor that has been cut to filter out the logic not required by the task. For a kernel configuration item, it needs no more than 1s to analyze and export the 60w line+kernel source code; In addition, in the process of searching the kernel, we used rg, which is currently the fastest search tool under Linux, and the search speed is an order of magnitude higher than GREP.</p></li>
-<li><p>Fullly-featured: The line level accurate analysis can reasonably handle macro nesting, blank lines, comments and other logic, and can output the logical relationship between specific code lines and configuration items.</p></li>
-<li><p>Accuracy: For the export of kernel configuration items, KVCE does not use the traditional search method, but uses Kconfiglib for accurate analysis (no need to worry, no need to install Kconfiglib additionally); For analysis logic, CPIP is a preprocessor implemented in strict accordance with ISO C99 standard.</p></li>
-<li><p>Clear: KVCE interfaces at different levels provide both end-to-end interfaces and low-level interfaces to obtain intermediate results. The output results are provided in the most common data types, which are clear.</p></li>
+<li><p>🚀Fast: KVCE has a set of built-in tools to speed up the analysis process. A C/C++preprocessor that has been cut to filter out the logic not required by the task. For a kernel configuration item, it needs no more than 1s to analyze and export the 60w line+kernel source code; In addition, in the process of searching the kernel, we used rg, which is currently the fastest search tool under Linux, and the search speed is an order of magnitude higher than GREP.</p></li>
+<li><p>💎Fullly-featured: The line level accurate analysis can reasonably handle macro nesting, blank lines, comments and other logic, and can output the logical relationship between specific code lines and configuration items.</p></li>
+<li><p>✨Accuracy: For the export of kernel configuration items, KVCE does not use the traditional search method, but uses Kconfiglib for accurate analysis (no need to worry, no need to install Kconfiglib additionally); For analysis logic, CPIP is a preprocessor implemented in strict accordance with ISO C99 standard.</p></li>
+<li><p>🌲Clear: KVCE interfaces at different levels provide both end-to-end interfaces and low-level interfaces to obtain intermediate results. The output results are provided in the most common data types, which are clear.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This project is under active development.</p>
 </div>
 </section>
-<section id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h1>
-<p>Directly clone the source from github.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>git clone https://github.com/Rose1917/KVCE2
-</pre></div>
-</div>
-<p>The souce structure is as follow:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">├── build //intermediate files</span>
-<span class="go">├── cpip  //preprocessor for this task</span>
-<span class="go">├── issue.txt</span>
-<span class="go">├── kvce.py  //main logic</span>
-<span class="go">├── README.md</span>
-<span class="go">├── requirements.txt //python libraries</span>
-<span class="go">├── scripts //some utilities scripts</span>
-<span class="go">├── utils //util function</span>
-</pre></div>
-</div>
-<div class="toctree-wrapper compound">
-</div>
-</section>
 <section id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">¶</a></h1>
-<ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
-<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+<p>Below is the overview of this documentation. In the install secion, we mainly introduce the prerequistes and some points of attention. In the get started part, the most important apis are described. For a full description of the api, see the documentation part.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Installation.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installation.html#download">Download</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installation.html#file-structure">File Structure</a></li>
 </ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Get%20Started.html">Get Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Get%20Started.html#import">import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Get%20Started.html#linux-kernel-configuration-variable">linux kernel configuration variable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Get%20Started.html#export-the-linux-kernel-configuration-items">export the linux kernel configuration items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Get%20Started.html#find-the-lines-that-are-affected-by-configuration-variables">Find the LINES that are affected by configuration variables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Documentation.html">Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Documentation.html#id1">documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </section>
 
 
@@ -97,11 +95,17 @@
 
 
 <h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Get%20Started.html">Get Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Documentation.html">Documentation</a></li>
+</ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="Installation.html" title="next chapter">Installation</a></li>
   </ul></li>
 </ul>
 </div>
