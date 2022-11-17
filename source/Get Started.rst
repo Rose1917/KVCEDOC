@@ -332,3 +332,20 @@ And call the top-level function with `file_based` set True.
       ...
   }
   '''
+
+Output Format Choice
+-----------------------------------------------------------
+For some reason(like to store the intermediate result), you may want to get the different output format. We have provided the json format result with an optional argument json_format(Boolean value). By default, it is false, you can set it True to get the json format result.
+
+For instance:
+
+.. code-block:: python
+
+    import kvce
+    config_list = ['CONFIG_CC_VERSION_TEXT', 'CONFIG_CC_IS_GCC', 'CONFIG_CC_IS_CLANG']
+    kvce.analysis_lines('./linux-5.18.10', config_list, json_format=True)
+
+
+You will get the result of json string format. You can easily to store it to a file.
+ 
+This optional argument is supported by the `analysis/analysis_lines/analysis_makefile` apis.
